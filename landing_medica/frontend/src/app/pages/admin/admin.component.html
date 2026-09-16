@@ -1,0 +1,30 @@
+<div class="container mt-5" style="min-height: 60vh;">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow border-0 border-top border-primary border-4">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="mb-0">Intranet: Subir Examen</h4>
+            <button class="btn btn-outline-danger btn-sm" (click)="cerrarSesion()">Cerrar Sesión</button>
+          </div>
+          
+          <div class="mb-3">
+            <label class="form-label fw-bold">DNI del Paciente (7 dígitos)</label>
+            <input type="text" class="form-control" [(ngModel)]="dni" placeholder="Ej. 1234567" maxlength="7">
+          </div>
+          
+          <div class="mb-4">
+            <label class="form-label fw-bold">Documento (PDF/Imagen)</label>
+            <input type="file" class="form-control" (change)="onFileSelected($event)">
+          </div>
+
+          <div *ngIf="mensaje" class="alert" [ngClass]="exito ? 'alert-success' : 'alert-danger'">{{ mensaje }}</div>
+
+          <button class="btn btn-dark w-100 py-2" (click)="subir()" [disabled]="cargando">
+            {{ cargando ? 'Subiendo...' : 'Registrar en Base de Datos' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
