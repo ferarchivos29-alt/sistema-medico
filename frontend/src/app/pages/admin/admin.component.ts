@@ -25,7 +25,7 @@ export class AdminComponent {
     formData.append('dni', this.dni);
     formData.append('examen', this.archivo);
 
-    this.http.post('http://localhost:3000/api/upload', formData).subscribe({
+    this.http.post('https://sistema-medico-ui3n.onrender.com/api/upload', formData).subscribe({
       next: (res: any) => {
         this.cargando = false; 
         this.exito = true; 
@@ -36,7 +36,7 @@ export class AdminComponent {
       error: () => {
         this.cargando = false; 
         this.exito = false; 
-        this.mensaje = 'Error subiendo al servidor local.';
+        this.mensaje = 'Error subiendo al servidor.';
       }
     });
   }

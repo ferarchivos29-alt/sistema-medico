@@ -19,7 +19,7 @@ export class PacienteComponent {
     this.resultado = null;
     this.mensajeError = '';
 
-    this.http.get(`http://localhost:3000/api/buscar/${this.dni}`).subscribe({
+    this.http.get(`https://sistema-medico-ui3n.onrender.com/api/buscar/${this.dni}`).subscribe({
       next: (res: any) => {
         this.cargando = false;
         if(res.encontrado) {
@@ -30,7 +30,7 @@ export class PacienteComponent {
       },
       error: () => {
         this.cargando = false;
-        this.mensajeError = 'Error de conexión con el servidor local.';
+        this.mensajeError = 'Error de conexión con el servidor.';
       }
     });
   }

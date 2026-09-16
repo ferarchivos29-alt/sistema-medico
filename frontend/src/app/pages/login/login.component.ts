@@ -20,7 +20,7 @@ export class LoginComponent {
     this.cargando = true;
     this.mensajeError = '';
 
-    this.http.post('http://localhost:3000/api/login', { usuario: this.usuario, password: this.password }).subscribe({
+    this.http.post('https://sistema-medico-ui3n.onrender.com/api/login', { usuario: this.usuario, password: this.password }).subscribe({
       next: (res: any) => {
         this.cargando = false;
         if (res.exito) {
